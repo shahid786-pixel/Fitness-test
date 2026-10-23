@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Test - Daily Animated Fitness</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #121212; /* Dark Black */
+            color: #E0E0E0; /* Light Grey Text */
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #1E1E1E; /* Dark Grey */
+            padding: 20px;
+            text-align: center;
+            border-bottom: 3px solid #FF6600; /* Bright Orange */
+        }
+
+        header h1 {
+            color: #FF6600;
+            font-size: 28px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            color: #AAAAAA;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 15px;
+        }
+
+        .video-section, .task-section {
+            background-color: #1E1E1E;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            margin-bottom: 30px;
+            border: 1px solid #333333;
+        }
+
+        .video-section h2, .task-section h2 {
+            color: #FF6600;
+            margin-bottom: 15px;
+            font-size: 20px;
+            border-left: 4px solid #FF6600;
+            padding-left: 10px;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            background-color: #000;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .daily-info {
+            margin-top: 15px;
+        }
+
+        .daily-info h3 {
+            font-size: 18px;
+            color: #FFFFFF;
+        }
+
+        .daily-info p {
+            color: #AAAAAA;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        .task-form {
+            margin-top: 15px;
+        }
+
+        .task-form label {
+            display: block;
+            margin-bottom: 8px;
+            color: #E0E0E0;
+            font-size: 14px;
+        }
+
+        .task-form input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #2A2A2A;
+            border: 1px solid #444;
+            border-radius: 5px;
+            color: #FFF;
+            margin-bottom: 15px;
+        }
+
+        .task-form button {
+            background-color: #FF6600;
+            color: #FFF;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+            transition: background 0.3s;
+        }
+
+        .task-form button:hover {
+            background-color: #e55c00;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #1E1E1E;
+            color: #777777;
+            font-size: 13px;
+            border-top: 1px solid #333333;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Fitness Test</h1>
+        <p>Your Daily Animated Fitness & Health Partner</p>
+    </header>
+
+    <div class="container">
+        <!-- روزانہ کی ویڈیو کا سیکشن -->
+        <div class="video-section">
+            <h2>Today's Animated Workout</h2>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/placeholder" title="Daily Fitness Video" allowfullscreen></iframe>
+            </div>
+            <div class="daily-info">
+                <h3>Day 1: Full Body Stretching Animation</h3>
+                <p>Enjoy your daily animated fitness routine to stay active and healthy!</p>
+            </div>
+        </div>
+
+        <!-- روزانہ کے ٹاسک اور پروف کی تصدیق کا سیکشن -->
+        <div class="task-section">
+            <h2>Daily Workout Task Verification</h2>
+            <p style="color: #AAAAAA; font-size: 14px; margin-bottom: 15px;">
+                اپنا روزانہ کا ٹاسک مکمل کرنے کے لیے اپنی ورزش کی ویڈیو یا تصویر یہاں اپ لوڈ کریں۔ بغیر ثبوت کے ٹاسک قبول نہیں ہوگا!
+            </p>
+            <div class="task-form">
+                <label for="workoutProof">Upload Workout Video / Photo:</label>
+                <input type="file" id="workoutProof" accept="image/*,video/*">
+                <button onclick="alert('Task submitted successfully! Waiting for verification.')">Submit Workout Proof</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Fitness Test. All rights reserved.</p>
+    </footer>
+
+</body>
+  </html>
+  
