@@ -1,24 +1,81 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fitness Test Pro</title>
+    <title>Fitness Pro</title>
     <style>
         body {
             background-color: #121212;
             color: #ffffff;
             font-family: Arial, sans-serif;
             margin: 0;
+            padding: 0;
+        }
+        /* Top Navigation Bar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #1e1e1e;
+            padding: 15px 20px;
+            border-bottom: 2px solid #ff7700;
+        }
+        .menu-btn {
+            font-size: 24px;
+            cursor: pointer;
+            color: #ff7700;
+            background: none;
+            border: none;
+        }
+        .navbar h1 {
+            color: #ff7700;
+            font-size: 20px;
+            margin: 0;
+        }
+        /* Sidebar Menu */
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #1a1a1a;
+            overflow-x: hidden;
+            transition: 0.3s;
+            padding-top: 60px;
+            border-right: 2px solid #ff7700;
+        }
+        .sidebar a {
+            padding: 12px 25px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #ffffff;
+            display: block;
+            transition: 0.2s;
+        }
+        .sidebar a:hover {
+            background-color: #ff7700;
+            color: #121212;
+        }
+        .sidebar .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 25px;
+            color: #ff7700;
+        }
+        /* Main Container */
+        .container {
+            max-width: 500px;
+            margin: 20px auto;
             padding: 20px;
         }
         header {
             text-align: center;
             margin-bottom: 20px;
-        }
-        header h1 {
-            color: #ff7700;
-            margin-bottom: 5px;
         }
         header p {
             color: #aaaaaa;
@@ -28,8 +85,6 @@
             display: flex;
             flex-direction: column;
             gap: 15px;
-            max-width: 500px;
-            margin: 0 auto;
         }
         .task-card {
             background-color: #1e1e1e;
@@ -66,47 +121,86 @@
 </head>
 <body>
 
-    <header>
+    <!-- Top Navigation Bar with Menu Button -->
+    <div class="navbar">
+        <button class="menu-btn" onclick="openNav()">&#9776;</button>
         <h1>Fitness Pro</h1>
-        <p>Select your workout category and track your progress</p>
-    </header>
+        <div style="width: 24px;"></div> <!-- Spacer for alignment -->
+    </div>
 
-    <div class="category-container">
-        <!-- Chest Workout -->
-        <div class="task-card">
-            <h3>Chest Workout</h3>
-            <p>Build and strengthen your chest muscles with pro routines.</p>
-            <a href="chest.html" class="btn">Start Task</a>
-        </div>
+    <!-- Sidebar Menu -->
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="close-btn" onclick="closeNav()">&times;</a>
+        <a href="index.html">🏠 Home</a>
+        <a href="#" onclick="alert('Settings feature coming soon!')">⚙️ Settings</a>
+        <a href="#" onclick="shareApp()">🔗 Share App</a>
+    </div>
 
-        <!-- Shoulder Workout -->
-        <div class="task-card">
-            <h3>Shoulder Workout</h3>
-            <p>Enhance shoulder stability and upper body strength.</p>
-            <a href="shoulder.html" class="btn">Start Task</a>
-        </div>
+    <!-- Main Content -->
+    <div class="container">
+        <header>
+            <p>Select your workout category and track your progress</p>
+        </header>
 
-        <!-- Biceps & Triceps -->
-        <div class="task-card">
-            <h3>Arms Workout (Biceps & Triceps)</h3>
-            <p>Effective isolation exercises for massive arm growth.</p>
-            <a href="arms.html" class="btn">Start Task</a>
-        </div>
+        <div class="category-container">
+            <!-- Chest Workout -->
+            <div class="task-card">
+                <h3>Chest Workout</h3>
+                <p>Build a stronger chest with pro techniques</p>
+                <a href="chest.html" class="btn">Start Task</a>
+            </div>
 
-        <!-- Abs & Core -->
-        <div class="task-card">
-            <h3>Abs & Core Workout</h3>
-            <p>Core strengthening and six-pack shredding routines.</p>
-            <a href="abs.html" class="btn">Start Task</a>
-        </div>
+            <!-- Shoulder Workout -->
+            <div class="task-card">
+                <h3>Shoulder Workout</h3>
+                <p>Enhance your shoulder stability and size</p>
+                <a href="shoulder.html" class="btn">Start Task</a>
+            </div>
 
-        <!-- Hip & Legs Workout -->
-        <div class="task-card">
-            <h3>Legs & Hips Workout</h3>
-            <p>Lower body power, endurance, and flexibility training.</p>
-            <a href="hip.html" class="btn">Start Task</a>
+            <!-- Arms Workout -->
+            <div class="task-card">
+                <h3>Arms Workout</h3>
+                <p>Effective bicep and tricep routines</p>
+                <a href="arms.html" class="btn">Start Task</a>
+            </div>
+
+            <!-- Abs Workout -->
+            <div class="task-card">
+                <h3>Abs & Core Workout</h3>
+                <p>Core strengthening and shredding</p>
+                <a href="abs.html" class="btn">Start Task</a>
+            </div>
+
+            <!-- Legs & Hip Workout -->
+            <div class="task-card">
+                <h3>Legs & Hip Workout</h3>
+                <p>Lower body power and mobility training</p>
+                <a href="hip.html" class="btn">Start Task</a>
+            </div>
         </div>
     </div>
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+        }
+
+        function shareApp() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Fitness Pro App',
+                    text: 'Check out this amazing fitness app!',
+                    url: window.location.href,
+                }).catch(() => console.log('Sharing failed'));
+            } else {
+                alert('Copy link to share: ' + window.location.href);
+            }
+        }
+    </script>
 
 </body>
 </html>
