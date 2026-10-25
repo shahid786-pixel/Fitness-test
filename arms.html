@@ -19,6 +19,10 @@
         header h1 {
             color: #ff7700;
         }
+        header p {
+            color: #aaaaaa;
+            font-size: 14px;
+        }
         .container {
             max-width: 600px;
             margin: 0 auto;
@@ -51,13 +55,14 @@
             color: #ff7700;
             font-weight: bold;
         }
-        .form-group input, .form-group textarea {
+        .form-group input {
             width: 100%;
             padding: 10px;
             background-color: #2e2e2e;
             border: 1px solid #444;
             color: #fff;
             border-radius: 5px;
+            box-sizing: border-box;
         }
         .btn {
             background-color: #ff7700;
@@ -85,24 +90,24 @@
 
     <header>
         <h1>Arms Workout Task</h1>
-        <p>Effective isolation exercises for massive arm growth</p>
+        <p>Watch the video, follow the routine, and submit your daily task</p>
     </header>
 
     <div class="container">
-        <!-- YouTube Video Embedded -->
+        <!-- Arms Workout Video -->
         <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/e1mOv4BkdrQ" frameborder="0" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/VOgZkV0ZU9k" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
 
         <!-- Task Submission Form -->
-        <form action="#" method="POST">
+        <form onsubmit="event.preventDefault(); alert('Task submitted successfully!');">
             <div class="form-group">
                 <label for="username">Your Name:</label>
                 <input type="text" id="username" name="username" placeholder="Enter your name" required>
             </div>
 
             <div class="form-group">
-                <label for="proof">Upload Photo/Video Proof:</label>
+                <label for="proof">Upload Workout Photo/Video Proof:</label>
                 <input type="file" id="proof" name="proof" accept="image/*,video/*" required>
             </div>
 
@@ -113,5 +118,4 @@
     </div>
 
 </body>
-  </html>
-  
+</html>
