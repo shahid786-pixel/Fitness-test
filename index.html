@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -125,14 +124,14 @@
     <div class="navbar">
         <button class="menu-btn" onclick="openNav()">&#9776;</button>
         <h1>Fitness Pro</h1>
-        <div style="width: 24px;"></div> <!-- Spacer for alignment -->
+        <div style="width: 24px;"></div>
     </div>
 
     <!-- Sidebar Menu -->
     <div id="mySidebar" class="sidebar">
         <a href="javascript:void(0)" class="close-btn" onclick="closeNav()">&times;</a>
         <a href="index.html">🏠 Home</a>
-        <a href="#" onclick="alert('Settings feature coming soon!')">⚙️ Settings</a>
+        <a href="settings.html">⚙️ Settings</a>
         <a href="#" onclick="shareApp()">🔗 Share App</a>
     </div>
 
@@ -195,12 +194,18 @@
                     title: 'Fitness Pro App',
                     text: 'Check out this amazing fitness app!',
                     url: window.location.href,
-                }).catch(() => console.log('Sharing failed'));
+                }).catch(() => {});
             } else {
-                alert('Copy link to share: ' + window.location.href);
+                // Fallback to clipboard copy if web share API is not supported
+                navigator.clipboard.writeText(window.location.href).then(() => {
+                    alert('App link copied to clipboard!');
+                }).catch(() => {
+                    alert('Share link: ' + window.location.href);
+                });
             }
         }
     </script>
 
 </body>
-</html>
+    </html>
+    
